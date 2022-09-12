@@ -7,6 +7,9 @@ import { UsersService } from './users.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
+//Hay que armar una clase users(acá sería users.ts), y un servicio para esa clase (en este caso users.service.ts)
+
+
 export class UsersComponent implements OnInit {
 
   us!: Users[];
@@ -42,7 +45,7 @@ export class UsersComponent implements OnInit {
      public altaUsers(us:Users){
       if (us.nombre != " "){
         
-      this.usersServicio.crearUsers(us).subscribe((dato: { id: string; nombre: string; email: string}) =>this.traerUsers());
+      this.usersServicio.crearUsers(us).subscribe((dato: { id: string; nombre: string; email: string}) =>this.recargar());
       
       }
       else{  alert("El nombre no puede estar en blanco")}
